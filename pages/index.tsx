@@ -9,8 +9,18 @@ interface Props {
 }
 
 const Home: NextPage<Props> = ({ home, posts }: Props) => {
-  console.log(home);
-  console.log(posts);
+  // 쿼리문 출력 확인용
+  // console.log(home);
+  // console.log(posts);
+
+  // Home에서 mainPost의 mainPostUrl과 post들의 정보를 담은 정보에서 slug url이 같은 post 요소를 반환
+  const mainPost = posts.find((post: any) => post.slug === home.mainPostUrl);
+  // Home에서 " 가 다른 포스트들의 정보만 골라내는것, mainPost의 반대
+  const otherPosts = posts.filter(
+    (post: any) => post.slug !== home.mainPostUrl
+  );
+
+  console.log(mainPost);
 
   return (
     <div className={styles.container}>
