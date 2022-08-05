@@ -1,14 +1,17 @@
 import { GetStaticPaths, GetStaticProps } from "next";
 import { useRouter } from "next/router";
 import { ParsedUrlQuery } from "querystring";
-import sanityClient from "@sanity/client";
-import { sanityQuery } from "../../queries";
+import { sanityQuery } from "../../services/queries";
+import SanityService from "../../services/SanityService";
 
-interface Props {
+interface Props extends ParsedUrlQuery {
   slug: string;
+  post: any;
 }
 
-const PostAll = ({ slug }: Props) => {
+const PostAll = ({ slug, post }: Props) => {
+  console.log(post);
+
   return (
     <div>
       <h1>PostAll</h1>
@@ -21,14 +24,8 @@ export default PostAll;
 
 export const getStaticPaths: GetStaticPaths = async () => {
   // Sanity 로부터 데이터를 가져옴
-  const client = sanityClient({
-    dataset: "production",
-    projectId: "fty5c0wl",
-    useCdn: process.env.NODE_ENV === "production",
-  });
-
-  const homeQuery = sanityQuery.homeQuery;
-  const posts = await client.fetch(homeQuery);
+  const sanityService = new SanityService();
+  const posts = await sanityService.getPosts();
 
   const paths = posts.map((post: any) => ({
     params: {
@@ -42,11 +39,19 @@ export const getStaticPaths: GetStaticPaths = async () => {
   };
 };
 
-export const getStaticProps: GetStaticProps = async ({ params }) => {
-  const { slug }: any = params;
+export const getStaticProps: GetStaticProps = async (context) => {
+  const { slug }: any = context.params;
+
+  // Sanity 로부터 데이터를 가져옴
+  const sanityService = new SanityService();
+  const posts = await sanityService.getPosts();
+
+  const post = posts.find((p: any) => p.slug === slug);
+
   return {
     props: {
       slug,
+      post,
     },
   };
 };

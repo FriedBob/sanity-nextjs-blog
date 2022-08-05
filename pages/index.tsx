@@ -1,7 +1,7 @@
 import type { GetStaticProps, NextPage } from "next";
-import sanityClient from "@sanity/client";
+import SanityService from "../services/SanityService";
 import styles from "../styles/Home.module.css";
-import { sanityQuery } from "../queries";
+import { sanityQuery } from "../services/queries";
 
 interface Props {
   home: any;
@@ -23,17 +23,13 @@ export default Home;
 
 export const getStaticProps: GetStaticProps = async () => {
   // Sanity 로부터 데이터를 가져옴
-  const client = sanityClient({
-    dataset: "production",
-    projectId: "fty5c0wl",
-    useCdn: process.env.NODE_ENV === "production",
-  });
 
   const homeQuery = sanityQuery.homeQuery;
   const mainPostUrlQuery = sanityQuery.mainPostUrlQuery;
 
-  const home = await client.fetch(mainPostUrlQuery);
-  const posts = await client.fetch(homeQuery);
+  const sanityService = new SanityService();
+  const home = await sanityService.getHome();
+  const posts = await sanityService.getPosts();
 
   return {
     props: {
