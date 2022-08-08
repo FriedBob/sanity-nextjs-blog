@@ -1,7 +1,7 @@
 import type { GetStaticProps, NextPage } from "next";
 import SanityService from "../services/SanityService";
-import styles from "../styles/Home.module.css";
 import { sanityQuery } from "../services/queries";
+import * as S from "./styles";
 
 interface Props {
   home: any;
@@ -23,9 +23,9 @@ const Home: NextPage<Props> = ({ home, posts }: Props) => {
   console.log(mainPost);
 
   return (
-    <div className={styles.container}>
+    <S.Container>
       <h1>Blog Home</h1>
-    </div>
+    </S.Container>
   );
 };
 
