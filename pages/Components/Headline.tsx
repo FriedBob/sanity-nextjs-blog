@@ -5,7 +5,7 @@ import { intro } from "./HeadlineText";
 const Headline = () => {
   return (
     <Stack alignItems="center">
-      <S.HeadlineContainer>
+      <S.LineContainer>
         <Typography variant="h1" sx={{ margin: "6rem 0", fontWeight: "700" }}>
           Shin&apos;s Blog
         </Typography>
@@ -18,7 +18,7 @@ const Headline = () => {
         >
           {intro}
         </Typography>
-      </S.HeadlineContainer>
+      </S.LineContainer>
       <Divider sx={{ width: "90%" }} />
     </Stack>
   );

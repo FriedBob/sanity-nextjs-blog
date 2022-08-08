@@ -7,6 +7,7 @@ import { useRouter } from "next/router";
 import { Divider } from "@mui/material";
 import Headline from "./Components/Headline";
 import BlogMainPost from "./Components/BlogMainPost";
+import Footer from "./Components/Footer";
 
 interface Props {
   home: any;
@@ -35,6 +36,8 @@ const Home: NextPage<Props> = ({ home, posts }: Props) => {
       <Divider />
       <Headline />
       <BlogMainPost {...mainPost} />
+      <Divider />
+      <Footer />
     </S.Container>
   );
 };

@@ -36,12 +36,15 @@ const BlogMainPost = ({
 }: MainPostProps) => {
   return (
     <_Stack>
+      <Typography variant="h2" sx={{ fontWeight: "600", mb: "1rem" }}>
+        Main Post
+      </Typography>
       <Link href={`/post/${slug}`}>
         <Card sx={{ width: "80%" }}>
           <CardActionArea>
             <CardMedia
               component="img"
-              height="400"
+              height="500"
               image={thumbnail.imageUrl}
               alt="mainpost-thumbnail-imageUrl"
             />
