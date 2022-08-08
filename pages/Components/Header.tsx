@@ -6,7 +6,7 @@ import {
   Toolbar,
   Typography,
 } from "@mui/material";
-import React, { useCallback, useState } from "react";
+import React, { forwardRef, useCallback, useRef, useState } from "react";
 import HomeIcon from "@mui/icons-material/Home";
 import * as S from "./styles";
 import { Box } from "@mui/system";
@@ -17,15 +17,24 @@ interface buttonProps {
   handleHomeClick: () => void;
 }
 
+/**
+ *  헤더
+ *  Header.tsx
+ */
 const Header = ({ handleHomeClick }: buttonProps) => {
   const [anchorElNav, setAnchorElNav] = useState<null | HTMLElement>(null);
+  const ref = useRef();
 
   // 서브메뉴 버튼 클릭 시 로직
-  const handleCloseNavMenu = useCallback(() => {
-    anchorElNav !== null
-      ? setAnchorElNav(null)
-      : console.log("nothing changed");
-  }, [anchorElNav]);
+  const clickPost = () => {
+    console.log("clickPost");
+  };
+  const clickAuthor = () => {
+    console.log("clickAuthor");
+  };
+  const clickAbout = () => {
+    console.log("clickAbout");
+  };
 
   return (
     <div>
@@ -69,20 +78,39 @@ const Header = ({ handleHomeClick }: buttonProps) => {
                 display: { xs: "none", md: "flex" },
               }}
             >
-              {pages.map((page) => (
-                <Button
-                  key={page}
-                  onClick={handleCloseNavMenu}
-                  sx={{
-                    px: "1rem",
-                    my: 2,
-                    color: "#302e2e",
-                    display: "black",
-                  }}
-                >
-                  {page}
-                </Button>
-              ))}
+              <Button
+                onClick={clickPost}
+                sx={{
+                  px: "1rem",
+                  my: 2,
+                  color: "#302e2e",
+                  display: "black",
+                }}
+              >
+                {pages[0]}
+              </Button>
+              <Button
+                onClick={clickAuthor}
+                sx={{
+                  px: "1rem",
+                  my: 2,
+                  color: "#302e2e",
+                  display: "black",
+                }}
+              >
+                {pages[1]}
+              </Button>
+              <Button
+                onClick={clickAbout}
+                sx={{
+                  px: "1rem",
+                  my: 2,
+                  color: "#302e2e",
+                  display: "black",
+                }}
+              >
+                {pages[2]}
+              </Button>
             </Box>
           </Toolbar>
         </Container>
