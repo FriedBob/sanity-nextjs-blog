@@ -6,6 +6,7 @@ import Header from "./Components/Header";
 import { useRouter } from "next/router";
 import { Divider } from "@mui/material";
 import Headline from "./Components/Headline";
+import BlogMainPost from "./Components/BlogMainPost";
 
 interface Props {
   home: any;
@@ -33,6 +34,7 @@ const Home: NextPage<Props> = ({ home, posts }: Props) => {
       <Header handleHomeClick={handleHomeClick} />
       <Divider />
       <Headline />
+      <BlogMainPost {...mainPost} />
     </S.Container>
   );
 };
@@ -42,15 +44,15 @@ export default Home;
 export const getStaticProps: GetStaticProps = async () => {
   // Sanity 로부터 데이터를 가져옴
 
-  // // API 요청 일시잠금
-  // const homeQuery = sanityQuery.homeQuery;
-  // const mainPostUrlQuery = sanityQuery.mainPostUrlQuery;
+  // API 요청 일시잠금
+  const homeQuery = sanityQuery.homeQuery;
+  const mainPostUrlQuery = sanityQuery.mainPostUrlQuery;
 
-  // const sanityService = new SanityService();
-  // const home = await sanityService.getHome();
-  // const posts = await sanityService.getPosts();
-  const home = {};
-  const posts = {};
+  const sanityService = new SanityService();
+  const home = await sanityService.getHome();
+  const posts = await sanityService.getPosts();
+  // const home = {};
+  // const posts = {};
 
   return {
     props: {
