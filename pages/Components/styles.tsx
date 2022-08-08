@@ -1,4 +1,4 @@
-import { Stack } from "@mui/material";
+import { Button, Stack } from "@mui/material";
 import { Box } from "@mui/system";
 import styled from "styled-components";
 
@@ -16,4 +16,10 @@ export const _Stack = styled(Stack)`
 export const TextContainer = styled.p`
   margin: 0;
   padding: 0;
+`;
+
+export const MenuButton = styled(Button)`
+  &:hover {
+    background-color: transparent;
+  }
 `;

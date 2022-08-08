@@ -6,10 +6,12 @@ import {
   Toolbar,
   Typography,
 } from "@mui/material";
-import React, { useState } from "react";
+import React, { useCallback, useState } from "react";
 import HomeIcon from "@mui/icons-material/Home";
+import * as S from "./styles";
+import { Box } from "@mui/system";
 
-const pages = ["1", "2", "3"]; // 이동할 페이지 백업
+const pages = ["Post", "Author", "About"]; // 이동할 페이지 백업
 
 interface buttonProps {
   handleHomeClick: () => void;
@@ -17,6 +19,13 @@ interface buttonProps {
 
 const Header = ({ handleHomeClick }: buttonProps) => {
   const [anchorElNav, setAnchorElNav] = useState<null | HTMLElement>(null);
+
+  // 서브메뉴 버튼 클릭 시 로직
+  const handleCloseNavMenu = useCallback(() => {
+    anchorElNav !== null
+      ? setAnchorElNav(null)
+      : console.log("nothing changed");
+  }, [anchorElNav]);
 
   return (
     <div>
@@ -37,16 +46,11 @@ const Header = ({ handleHomeClick }: buttonProps) => {
           }}
         >
           <Toolbar sx={{ "&.MuiToolbar-root": { padding: 0 } }}>
-            <Button
+            <S.MenuButton
               size="large"
               color="inherit"
               aria-label="home"
               onClick={handleHomeClick}
-              sx={{
-                "&:hover": {
-                  backgroundColor: "transparent",
-                },
-              }}
             >
               <HomeIcon />
               <Typography
@@ -56,7 +60,30 @@ const Header = ({ handleHomeClick }: buttonProps) => {
               >
                 Shin&apos;s Blog
               </Typography>
-            </Button>
+              {/* 서브메뉴 아이콘 로직 */}
+            </S.MenuButton>
+            <Box
+              sx={{
+                ml: "1rem",
+                flexGrow: 1,
+                display: { xs: "none", md: "flex" },
+              }}
+            >
+              {pages.map((page) => (
+                <Button
+                  key={page}
+                  onClick={handleCloseNavMenu}
+                  sx={{
+                    px: "1rem",
+                    my: 2,
+                    color: "#302e2e",
+                    display: "black",
+                  }}
+                >
+                  {page}
+                </Button>
+              ))}
+            </Box>
           </Toolbar>
         </Container>
       </AppBar>
