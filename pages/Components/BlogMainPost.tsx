@@ -36,9 +36,9 @@ const BlogMainPost = ({
 }: MainPostProps) => {
   return (
     <_Stack>
-      <Typography variant="h2" sx={{ fontWeight: "600", mb: "1rem" }}>
+      {/* <Typography variant="h2" sx={{ fontWeight: "600", mb: "1rem" }}>
         Main Post
-      </Typography>
+      </Typography> */}
       <Link href={`/post/${slug}`}>
         <Card sx={{ width: "80%" }}>
           <CardActionArea>

@@ -17,6 +17,7 @@
     "@mui/material": "^5.9.3",
     "@mui/styled-engine-sc": "^5.9.3",
     "@mui/styles": "^5.9.3",
+    "@sanity/block-content-to-react": "^3.0.0",
     "@sanity/client": "^3.3.3",
     "moment": "^2.29.4",
     "next": "12.2.4",

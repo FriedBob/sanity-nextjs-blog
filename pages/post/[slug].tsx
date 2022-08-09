@@ -1,22 +1,40 @@
+import { Divider } from "@mui/material";
 import { GetStaticPaths, GetStaticProps } from "next";
 import { useRouter } from "next/router";
 import { ParsedUrlQuery } from "querystring";
 import { sanityQuery } from "../../services/queries";
 import SanityService from "../../services/SanityService";
+import BlogMainPost from "../Components/BlogMainPost";
+import Footer from "../Components/Footer";
+import Header from "../Components/Header";
+import * as S from "./Components/styles";
+import DetailPost from "./Components/DetailPost";
 
 interface Props extends ParsedUrlQuery {
   slug: string;
   post: any;
 }
 
+/**
+ * ----------- Post 정보 표시 페이지 ----------------------
+ *
+ */
 const PostAll = ({ slug, post }: Props) => {
-  console.log(post);
+  const router = useRouter();
+
+  const handleHomeClick = () => {
+    router.push("/");
+  };
 
   return (
-    <div>
-      <h1>PostAll</h1>
-      <h1>Name : {slug}</h1>
-    </div>
+    <S.Container>
+      <Header handleHomeClick={handleHomeClick} />
+      <Divider />
+      <BlogMainPost {...post} />
+      <DetailPost blocks={post.content} />
+      <Divider />
+      <Footer />
+    </S.Container>
   );
 };
 

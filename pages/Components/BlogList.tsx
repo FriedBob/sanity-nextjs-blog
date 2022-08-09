@@ -8,6 +8,7 @@ import {
 } from "@mui/material";
 import { fontSize } from "@mui/system";
 import { wrap } from "module";
+import moment from "moment";
 import React from "react";
 
 // mainPost 이외의 otherPostProps들
@@ -53,7 +54,7 @@ const BlogList = ({ posts }: { posts: Array<otherPostProps> }) => {
         {posts &&
           posts.map((post) => (
             <Card key={post.slug} sx={{ width: "200px" }}>
-              <CardActionArea>
+              <CardActionArea href={`/post/${post.slug}`}>
                 <CardMedia
                   component="img"
                   height="150px"
@@ -75,6 +76,18 @@ const BlogList = ({ posts }: { posts: Array<otherPostProps> }) => {
                     }}
                   >
                     {post.title}
+                  </Typography>
+                  <Typography
+                    sx={{
+                      fontWeight: "400",
+                      mt: "0.1rem",
+                      fontSize: "0.7rem",
+                      color: "#a19e9e",
+                    }}
+                  >
+                    {`${post.author.name} - ${moment(post.createdAt).format(
+                      "YYYY년 MM월 DD일"
+                    )}`}
                   </Typography>
                 </CardContent>
               </CardActionArea>
