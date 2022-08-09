@@ -30,7 +30,7 @@ const PostAll = ({ slug, post }: Props) => {
     <S.Container>
       <Header handleHomeClick={handleHomeClick} />
       <Divider />
-      <BlogMainPost {...post} />
+      {/* <BlogMainPost {...post} /> */}
       <DetailPost blocks={post.content} />
       <Divider />
       <Footer />

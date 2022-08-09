@@ -5,6 +5,9 @@ import ReactPlayer from "react-player/lazy";
 import SyntaxHighlighter from "react-syntax-highlighter";
 import LinkCard from "./LinkCard";
 import Image from "next/image";
+import imageUrlBuilder from "@sanity/image-url";
+import SanityService from "../../../services/SanityService";
+import ImageGallery from "./ImageGallery";
 
 interface Content {
   blocks: Array<ContentProps>;
@@ -23,9 +26,16 @@ interface ContentProps {
  */
 const DetailPost = ({ blocks }: Content) => {
   const [serializers, setSerializers] = useState({ types: {} });
-  console.log(blocks);
+  // console.log(blocks);
 
   useEffect(() => {
+    const sanityService = new SanityService();
+    const builder = imageUrlBuilder(sanityService._client);
+
+    function urlFor(source: string) {
+      return builder.image(source);
+    }
+
     setSerializers({
       types: {
         /* ----------Code Contents-------------- */
@@ -59,16 +69,20 @@ const DetailPost = ({ blocks }: Content) => {
         /* ----------Image Contents-------------- */
         image: ({ node }: any) => {
           const { alt, asset, caption } = node;
-          // const imageBlock = blocks.find((block) => block.)
+          // console.log(urlFor(asset._ref).auto("format").width(720).toString());
+          const imgUrl = urlFor(asset._ref)
+            .auto("format")
+            .width(720)
+            .toString();
 
-          return (
-            <></>
-            // <Image src={asset._ref} alt={alt} width="200px" height="200px" />
-          );
+          return <img src={imgUrl} alt={alt} />;
         },
         /* ----------ImageGallery Contents-------------- */
         imageGallery: ({ node }: any) => {
-          return <p>imageGallery</p>;
+          console.log(node);
+
+          return <ImageGallery {...node} />;
+          // return <p>imageGallery</p>;
         },
       },
     });
