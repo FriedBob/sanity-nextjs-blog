@@ -8,6 +8,7 @@ import { Divider } from "@mui/material";
 import Headline from "./Components/Headline";
 import BlogMainPost from "./Components/BlogMainPost";
 import Footer from "./Components/Footer";
+import BlogList, { otherPostProps } from "./Components/BlogList";
 
 interface Props {
   home: any;
@@ -20,7 +21,7 @@ const Home: NextPage<Props> = ({ home, posts }: Props) => {
   // Home에서 mainPost의 mainPostUrl과 post들의 정보를 담은 정보에서 slug url이 같은 post 요소를 반환
   const mainPost = posts.find((post: any) => post.slug === home.mainPostUrl);
   // Home에서 " 가 다른 포스트들의 정보만 골라내는것, mainPost의 반대
-  const otherPosts = posts.filter(
+  const otherPosts: any = posts.filter(
     (post: any) => post.slug !== home.mainPostUrl
   );
 
@@ -36,6 +37,7 @@ const Home: NextPage<Props> = ({ home, posts }: Props) => {
       <Divider />
       <Headline />
       <BlogMainPost {...mainPost} />
+      <BlogList posts={otherPosts} />
       <Divider />
       <Footer />
     </S.Container>
