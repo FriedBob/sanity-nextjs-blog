@@ -25,7 +25,8 @@ const Home: NextPage<Props> = ({ home, posts }: Props) => {
     (post: any) => post.slug !== home.mainPostUrl
   );
 
-  console.log(mainPost);
+  // console.log(mainPost);
+  console.log(posts);
 
   const handleHomeClick = () => {
     router.push("/");
