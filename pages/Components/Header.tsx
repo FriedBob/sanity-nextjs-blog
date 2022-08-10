@@ -10,24 +10,50 @@ import React, { forwardRef, useCallback, useRef, useState } from "react";
 import HomeIcon from "@mui/icons-material/Home";
 import * as S from "./styles";
 import { Box } from "@mui/system";
+import { useRouter } from "next/router";
 
 const pages = ["Post", "Author", "About"]; // 이동할 페이지 백업
-
-interface buttonProps {
+interface InputProps {
   handleHomeClick: () => void;
+  posts?: Array<PostProps>;
 }
+
+interface PostProps {
+  author: { image: string; name: string; role: string }; // 글 작성자
+  createdAt: string; // 글 작성시기
+  slug: string; // 포스트 고유값 (pathname)
+  subtitle: string; // 글 부제
+  thumbnail: { alt: string; imageUrl: string };
+  title: string;
+  tag: TagProps; // 게시물 태그
+}
+
+interface TagProps {
+  title: string;
+  slug: string;
+}
+
+// interface buttonProps {
+//   handleHomeClick: () => void;
+// }
 
 /**
  *  헤더
  *  Header.tsx
  */
-const Header = ({ handleHomeClick }: buttonProps) => {
-  const [anchorElNav, setAnchorElNav] = useState<null | HTMLElement>(null);
-  const ref = useRef();
+const Header = ({ handleHomeClick, posts }: InputProps) => {
+  // const [anchorElNav, setAnchorElNav] = useState<null | HTMLElement>(null);
+  // const ref = useRef();
+
+  const router = useRouter();
 
   // 서브메뉴 버튼 클릭 시 로직
   const clickPost = () => {
-    console.log("clickPost");
+    // console.log(posts);
+    // router.push(
+    //   { pathname: "/post", query: { posts: JSON.stringify(posts) } }
+    //   // "/post"
+    // );
   };
   const clickAuthor = () => {
     console.log("clickAuthor");

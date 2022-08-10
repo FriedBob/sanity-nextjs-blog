@@ -34,7 +34,7 @@ const Home: NextPage<Props> = ({ home, posts }: Props) => {
 
   return (
     <S.Container>
-      <Header handleHomeClick={handleHomeClick} />
+      <Header posts={posts} handleHomeClick={handleHomeClick} />
       <Divider />
       <Headline />
       <BlogMainPost {...mainPost} />
