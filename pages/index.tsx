@@ -39,7 +39,7 @@ const Home: NextPage<Props> = ({ home, posts }: Props) => {
       <Headline />
       <BlogMainPost {...mainPost} />
       <BlogList posts={otherPosts} />
-      <Divider />
+      <Divider sx={{ mt: "5rem" }} />
       <Footer />
     </S.Container>
   );

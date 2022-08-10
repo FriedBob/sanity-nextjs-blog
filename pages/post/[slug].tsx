@@ -9,6 +9,7 @@ import Footer from "../Components/Footer";
 import Header from "../Components/Header";
 import * as S from "./Components/styles";
 import DetailPost from "./Components/DetailPost";
+import BlogPostTitle from "./Components/BlogPostTitle";
 
 interface Props extends ParsedUrlQuery {
   slug: string;
@@ -31,8 +32,9 @@ const PostAll = ({ slug, post }: Props) => {
       <Header handleHomeClick={handleHomeClick} />
       <Divider />
       {/* <BlogMainPost {...post} /> */}
+      <BlogPostTitle {...post} />
       <DetailPost blocks={post.content} />
-      <Divider />
+      <Divider sx={{ mt: "5rem" }} />
       <Footer />
     </S.Container>
   );
