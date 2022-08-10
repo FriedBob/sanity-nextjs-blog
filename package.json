@@ -27,6 +27,7 @@
     "react-dom": "18.2.0",
     "react-player": "^2.10.1",
     "react-syntax-highlighter": "^15.5.0",
+    "recoil": "^0.7.4",
     "styled-components": "^5.3.5"
   },
   "devDependencies": {
