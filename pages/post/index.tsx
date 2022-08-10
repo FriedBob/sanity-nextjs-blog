@@ -12,6 +12,7 @@ import DetailPost from "./Components/DetailPost";
 import BlogPostTitle from "./Components/BlogPostTitle";
 import { useRecoilState } from "recoil";
 import { PostProps, postsState } from "../states/dataStore";
+import BlogPostTable from "./Components/BlogPostTable";
 
 interface Props extends ParsedUrlQuery {
   slug: string;
@@ -39,7 +40,7 @@ const IndexPage = ({ slug, post }: Props) => {
     <S.Container>
       <Header handleHomeClick={handleHomeClick} />
       <Divider />
-
+      <BlogPostTable posts={postsData} />
       <Divider sx={{ mt: "5rem" }} />
       <Footer />
     </S.Container>
