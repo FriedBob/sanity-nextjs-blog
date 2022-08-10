@@ -118,6 +118,7 @@ const Header = ({ handleHomeClick, posts }: InputProps) => {
               </Button>
               <Button
                 onClick={clickAuthor}
+                disabled
                 sx={{
                   px: "1rem",
                   my: 2,

@@ -10,6 +10,8 @@ import Header from "../Components/Header";
 import * as S from "./Components/styles";
 import DetailPost from "./Components/DetailPost";
 import BlogPostTitle from "./Components/BlogPostTitle";
+import { useRecoilState } from "recoil";
+import { PostProps, postsState } from "../states/dataStore";
 
 interface Props extends ParsedUrlQuery {
   slug: string;
@@ -22,6 +24,7 @@ interface Props extends ParsedUrlQuery {
  */
 const PostAll = ({ slug, post }: Props) => {
   const router = useRouter();
+  const [postsData, setPostsData] = useRecoilState<PostProps[]>(postsState); // posts 배열 데이터를 담을 recoilState 선언
 
   const handleHomeClick = () => {
     router.push("/");
@@ -29,7 +32,7 @@ const PostAll = ({ slug, post }: Props) => {
 
   return (
     <S.Container>
-      <Header handleHomeClick={handleHomeClick} />
+      <Header handleHomeClick={handleHomeClick} posts={postsData} />
       <Divider />
       {/* <BlogMainPost {...post} /> */}
       <BlogPostTitle {...post} />

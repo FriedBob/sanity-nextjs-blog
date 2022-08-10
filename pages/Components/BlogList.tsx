@@ -9,6 +9,7 @@ import {
 import { fontSize } from "@mui/system";
 import { wrap } from "module";
 import moment from "moment";
+import { useRouter } from "next/router";
 import React from "react";
 
 // mainPost 이외의 otherPostProps들
@@ -30,6 +31,8 @@ export interface otherPostProps {
  */
 const BlogList = ({ posts }: { posts: Array<otherPostProps> }) => {
   // console.log(posts);
+
+  const router = useRouter();
 
   return (
     <div>
@@ -54,7 +57,12 @@ const BlogList = ({ posts }: { posts: Array<otherPostProps> }) => {
         {posts &&
           posts.map((post) => (
             <Card key={post.slug} sx={{ width: "200px" }}>
-              <CardActionArea href={`/post/${post.slug}`}>
+              {/* <CardActionArea href={`post/${post.slug}`}> href 를 쓸 경우 recoilState가 제대로 작동하지 않는듯함 */}
+              <CardActionArea
+                onClick={() => {
+                  router.push(`post/${post.slug}`);
+                }}
+              >
                 <CardMedia
                   component="img"
                   height="150px"
