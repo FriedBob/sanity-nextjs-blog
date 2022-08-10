@@ -49,6 +49,7 @@ const Header = ({ handleHomeClick, posts }: InputProps) => {
 
   // 서브메뉴 버튼 클릭 시 로직
   const clickPost = () => {
+    router.push("/post");
     // console.log(posts);
     // router.push(
     //   { pathname: "/post", query: { posts: JSON.stringify(posts) } }

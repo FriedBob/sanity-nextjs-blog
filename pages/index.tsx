@@ -9,6 +9,9 @@ import Headline from "./Components/Headline";
 import BlogMainPost from "./Components/BlogMainPost";
 import Footer from "./Components/Footer";
 import BlogList, { otherPostProps } from "./Components/BlogList";
+import { useRecoilState } from "recoil";
+import { PostProps, postsState } from "./states/dataStore";
+import { useEffect } from "react";
 
 interface Props {
   home: any;
@@ -17,16 +20,24 @@ interface Props {
 
 const Home: NextPage<Props> = ({ home, posts }: Props) => {
   const router = useRouter();
+  const [postsData, setPostsData] = useRecoilState<PostProps[]>(postsState); // posts 배열 데이터를 담을 recoilState 선언
+
+  useEffect(() => {
+    setPostsData(posts);
+  }, []);
+
+  console.log(postsData);
 
   // Home에서 mainPost의 mainPostUrl과 post들의 정보를 담은 정보에서 slug url이 같은 post 요소를 반환
   const mainPost = posts.find((post: any) => post.slug === home.mainPostUrl);
   // Home에서 " 가 다른 포스트들의 정보만 골라내는것, mainPost의 반대
+
   const otherPosts: any = posts.filter(
     (post: any) => post.slug !== home.mainPostUrl
   );
 
   // console.log(mainPost);
-  console.log(posts);
+  // console.log(posts);
 
   const handleHomeClick = () => {
     router.push("/");
