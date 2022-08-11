@@ -60,7 +60,8 @@ const Header = ({ handleHomeClick, posts }: InputProps) => {
     console.log("clickAuthor");
   };
   const clickAbout = () => {
-    console.log("clickAbout");
+    router.push("/about");
+    // console.log("clickAbout");
   };
 
   return (
