@@ -44,7 +44,7 @@ const Home: NextPage<Props> = ({ home, posts }: Props) => {
 
   const handleHomeClick = () => {
     console.log(prefix);
-    router.push(`/`);
+    router.push(`${prefix}/`);
   };
 
   return (
