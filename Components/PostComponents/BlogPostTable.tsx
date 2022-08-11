@@ -15,6 +15,7 @@ import { useRouter } from "next/router";
 import React, { useEffect } from "react";
 import { useRecoilState } from "recoil";
 import styled from "styled-components";
+import { prefix } from "../../config/config";
 import { postsState } from "../states/dataStore";
 
 export interface PostProps {
@@ -73,14 +74,14 @@ const BlogPostTable = ({ posts }: { posts: Array<PostProps> }) => {
                 <TableCell
                   sx={{ color: "#ada3a3" }}
                   onClick={() => {
-                    router.push(`post/${post.slug}`);
+                    router.push(`${prefix}/post/${post.slug}`);
                   }}
                 >
                   {post.slug}
                 </TableCell>
                 <BtnTableCell
                   onClick={() => {
-                    router.push(`post/${post.slug}`);
+                    router.push(`${prefix}/post/${post.slug}`);
                   }}
                 >
                   {post.title}

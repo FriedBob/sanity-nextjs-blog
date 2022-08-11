@@ -13,6 +13,7 @@ import BlogPostTitle from "../../Components/PostComponents/BlogPostTitle";
 import { useRecoilState } from "recoil";
 import { PostProps, postsState } from "../../Components/states/dataStore";
 import BlogPostTable from "../../Components/PostComponents/BlogPostTable";
+import { prefix } from "../../config/config";
 
 interface Props extends ParsedUrlQuery {
   slug: string;
@@ -33,7 +34,7 @@ const IndexPage = ({ slug, post }: Props) => {
   console.log(postsData);
 
   const handleHomeClick = () => {
-    router.push("/");
+    router.push(`${prefix}/`);
   };
 
   return (

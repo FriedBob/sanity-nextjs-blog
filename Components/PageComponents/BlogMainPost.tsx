@@ -9,6 +9,7 @@ import {
 import moment from "moment";
 import Link from "next/link";
 import React from "react";
+import { prefix } from "../../config/config";
 import { _Stack } from "./styles";
 
 /**
@@ -39,7 +40,7 @@ const BlogMainPost = ({
       {/* <Typography variant="h2" sx={{ fontWeight: "600", mb: "1rem" }}>
         Main Post
       </Typography> */}
-      <Link href={`/post/${slug}`}>
+      <Link href={`${prefix}/post/${slug}`}>
         <Card sx={{ width: "80%" }}>
           <CardActionArea>
             <CardMedia

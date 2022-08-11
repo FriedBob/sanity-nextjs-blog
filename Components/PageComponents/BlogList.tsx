@@ -11,6 +11,7 @@ import { wrap } from "module";
 import moment from "moment";
 import { useRouter } from "next/router";
 import React from "react";
+import { prefix } from "../../config/config";
 
 // mainPost 이외의 otherPostProps들
 export interface otherPostProps {
@@ -60,7 +61,7 @@ const BlogList = ({ posts }: { posts: Array<otherPostProps> }) => {
               {/* <CardActionArea href={`post/${post.slug}`}> href 를 쓸 경우 recoilState가 제대로 작동하지 않는듯함 */}
               <CardActionArea
                 onClick={() => {
-                  router.push(`post/${post.slug}`);
+                  router.push(`${prefix}/post/${post.slug}`);
                 }}
               >
                 <CardMedia
