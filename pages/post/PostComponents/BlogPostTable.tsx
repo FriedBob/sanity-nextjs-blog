@@ -15,7 +15,7 @@ import { useRouter } from "next/router";
 import React, { useEffect } from "react";
 import { useRecoilState } from "recoil";
 import styled from "styled-components";
-import { postsState } from "../../states/dataStore";
+import { postsState } from "../../../Components/states/dataStore";
 
 export interface PostProps {
   author: { image: string; name: string; role: string }; // 글 작성자

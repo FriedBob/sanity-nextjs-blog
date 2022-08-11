@@ -4,14 +4,14 @@ import { useRouter } from "next/router";
 import { ParsedUrlQuery } from "querystring";
 import { sanityQuery } from "../../services/queries";
 import SanityService from "../../services/SanityService";
-import BlogMainPost from "../Components/BlogMainPost";
-import Footer from "../Components/Footer";
-import Header from "../Components/Header";
-import * as S from "./Components/styles";
-import DetailPost from "./Components/DetailPost";
-import BlogPostTitle from "./Components/BlogPostTitle";
+import BlogMainPost from "../../Components/PageComponents/BlogMainPost";
+import Footer from "../../Components/PageComponents/Footer";
+import Header from "../../Components/PageComponents/Header";
+import * as S from "../../Components/PostComponents/styles";
+import DetailPost from "../../Components/PostComponents/DetailPost";
+import BlogPostTitle from "../../Components/PostComponents/BlogPostTitle";
 import { useRecoilState } from "recoil";
-import { PostProps, postsState } from "../states/dataStore";
+import { PostProps, postsState } from "../../Components/states/dataStore";
 
 interface Props extends ParsedUrlQuery {
   slug: string;

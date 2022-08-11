@@ -6,7 +6,7 @@ import SyntaxHighlighter from "react-syntax-highlighter";
 import LinkCard from "./LinkCard";
 import Image from "next/image";
 import imageUrlBuilder from "@sanity/image-url";
-import SanityService from "../../../services/SanityService";
+import SanityService from "../../services/SanityService";
 import ImageGallery from "./ImageGallery";
 
 interface Content {

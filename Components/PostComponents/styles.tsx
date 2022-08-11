@@ -23,3 +23,11 @@ export const MenuButton = styled(Button)`
     background-color: transparent;
   }
 `;
+
+export const Container = styled.div`
+  width: 1024px;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 18px;
+  /* margin-bottom: 8rem; */
+`;

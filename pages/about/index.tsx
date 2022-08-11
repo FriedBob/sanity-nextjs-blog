@@ -3,10 +3,10 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import React from "react";
 import { useRecoilState } from "recoil";
-import Footer from "../Components/Footer";
-import Header from "../Components/Header";
-import { postsState } from "../states/dataStore";
-import * as S from "./styles";
+import Footer from "../../Components/PageComponents/Footer";
+import Header from "../../Components/PageComponents/Header";
+import { postsState } from "../../Components/states/dataStore";
+import * as S from "../../Components/AboutComponents/styles";
 
 export interface PostProps {
   author: { image: string; name: string; role: string }; // 글 작성자

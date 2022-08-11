@@ -1,16 +1,18 @@
 import type { GetStaticProps, NextPage } from "next";
 import SanityService from "../services/SanityService";
 import { sanityQuery } from "../services/queries";
-import * as S from "./styles";
-import Header from "./Components/Header";
+import * as S from "../Components/PageComponents/styles";
+import Header from "../Components/PageComponents/Header";
 import { useRouter } from "next/router";
 import { Divider } from "@mui/material";
-import Headline from "./Components/Headline";
-import BlogMainPost from "./Components/BlogMainPost";
-import Footer from "./Components/Footer";
-import BlogList, { otherPostProps } from "./Components/BlogList";
+import Headline from "../Components/PageComponents/Headline";
+import BlogMainPost from "../Components/PageComponents/BlogMainPost";
+import Footer from "../Components/PageComponents/Footer";
+import BlogList, {
+  otherPostProps,
+} from "../Components/PageComponents/BlogList";
 import { useRecoilState } from "recoil";
-import { PostProps, postsState } from "./states/dataStore";
+import { PostProps, postsState } from "../Components/states/dataStore";
 import { useEffect } from "react";
 
 interface Props {
