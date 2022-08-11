@@ -1,6 +1,6 @@
 # [build]
 # # // next export는 하지 않는다.
-# command = "next build" 	
+command = "next build" 	
 # publish = ".next"		
 
 [[plugins]]
