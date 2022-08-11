@@ -14,6 +14,7 @@ import BlogList, {
 import { useRecoilState } from "recoil";
 import { PostProps, postsState } from "../Components/states/dataStore";
 import { useEffect } from "react";
+import { prefix } from "../config/config";
 
 interface Props {
   home: any;
@@ -42,7 +43,8 @@ const Home: NextPage<Props> = ({ home, posts }: Props) => {
   // console.log(posts);
 
   const handleHomeClick = () => {
-    router.push("/");
+    console.log(prefix);
+    router.push(`${prefix}/`);
   };
 
   return (
