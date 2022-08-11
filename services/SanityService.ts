@@ -4,7 +4,7 @@ import { sanityQuery } from "./queries";
 export default class SanityService {
   _client = sanityClient({
     dataset: "production",
-    projectId: "fty5c0wl",
+    projectId: process.env.SANITY_PROJECT_ID,
     useCdn: process.env.NODE_ENV === "production",
   });
 

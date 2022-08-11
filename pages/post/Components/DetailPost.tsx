@@ -92,7 +92,7 @@ const DetailPost = ({ blocks }: Content) => {
     <Stack>
       <SanityBlockContent
         blocks={blocks}
-        projectId="fty5c0wl"
+        projectId={process.env.SANITY_PROJECT_ID}
         dataset="prodcution"
         serializers={serializers}
       />
