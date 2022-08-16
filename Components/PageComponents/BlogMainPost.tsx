@@ -9,7 +9,6 @@ import {
 import moment from "moment";
 import Link from "next/link";
 import React from "react";
-import { prefix } from "../../config/config";
 import { _Stack } from "./styles";
 
 /**
@@ -26,6 +25,9 @@ interface MainPostProps {
 
   content: Object[]; // 게시글에 작성된 글의 각 속성들
 }
+
+const prefix =
+  process.env.NODE_ENV === "production" ? "sanity-nextjs-blog" : "";
 
 const BlogMainPost = ({
   title,

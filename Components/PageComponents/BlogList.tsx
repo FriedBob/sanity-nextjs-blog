@@ -11,7 +11,9 @@ import { wrap } from "module";
 import moment from "moment";
 import { useRouter } from "next/router";
 import React from "react";
-import { prefix } from "../../config/config";
+
+const prefix =
+  process.env.NODE_ENV === "production" ? "sanity-nextjs-blog" : "";
 
 // mainPost 이외의 otherPostProps들
 export interface otherPostProps {

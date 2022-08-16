@@ -11,7 +11,8 @@ import HomeIcon from "@mui/icons-material/Home";
 import * as S from "./styles";
 import { Box } from "@mui/system";
 import { useRouter } from "next/router";
-import { prefix } from "../../config/config";
+export const prefix =
+  process.env.NODE_ENV === "production" ? "sanity-nextjs-blog" : "";
 
 const pages = ["Post", "Author", "About"]; // 이동할 페이지 백업
 interface InputProps {

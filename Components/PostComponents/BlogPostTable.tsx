@@ -15,8 +15,11 @@ import { useRouter } from "next/router";
 import React, { useEffect } from "react";
 import { useRecoilState } from "recoil";
 import styled from "styled-components";
-import { prefix } from "../../config/config";
+
 import { postsState } from "../states/dataStore";
+
+const prefix =
+  process.env.NODE_ENV === "production" ? "sanity-nextjs-blog" : "";
 
 export interface PostProps {
   author: { image: string; name: string; role: string }; // 글 작성자

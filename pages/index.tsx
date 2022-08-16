@@ -14,7 +14,9 @@ import BlogList, {
 import { useRecoilState } from "recoil";
 import { PostProps, postsState } from "../Components/states/dataStore";
 import { useEffect } from "react";
-import { prefix } from "../config/config";
+
+const prefix =
+  process.env.NODE_ENV === "production" ? "sanity-nextjs-blog" : "";
 
 interface Props {
   home: any;

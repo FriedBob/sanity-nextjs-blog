@@ -7,7 +7,9 @@ import Footer from "../../Components/PageComponents/Footer";
 import Header from "../../Components/PageComponents/Header";
 import { postsState } from "../../Components/states/dataStore";
 import * as S from "../../Components/AboutComponents/styles";
-import { prefix } from "../../config/config";
+
+const prefix =
+  process.env.NODE_ENV === "production" ? "sanity-nextjs-blog" : "";
 
 export interface PostProps {
   author: { image: string; name: string; role: string }; // 글 작성자
