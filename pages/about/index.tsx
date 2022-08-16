@@ -8,8 +8,8 @@ import Header from "../../Components/PageComponents/Header";
 import { postsState } from "../../Components/states/dataStore";
 import * as S from "../../Components/AboutComponents/styles";
 
-const prefix =
-  process.env.NODE_ENV === "production" ? "sanity-nextjs-blog" : "";
+// const prefix =
+//   process.env.NODE_ENV === "production" ? "sanity-nextjs-blog" : "";
 
 export interface PostProps {
   author: { image: string; name: string; role: string }; // 글 작성자
@@ -35,7 +35,7 @@ const IndexPage = () => {
   const router = useRouter();
 
   const handleHomeClick = () => {
-    router.push(`${prefix}/`);
+    router.push(`/`);
   };
 
   return (

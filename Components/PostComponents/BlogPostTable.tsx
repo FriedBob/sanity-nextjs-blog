@@ -18,8 +18,8 @@ import styled from "styled-components";
 
 import { postsState } from "../states/dataStore";
 
-const prefix =
-  process.env.NODE_ENV === "production" ? "sanity-nextjs-blog" : "";
+// const prefix =
+//   process.env.NODE_ENV === "production" ? "sanity-nextjs-blog" : "";
 
 export interface PostProps {
   author: { image: string; name: string; role: string }; // 글 작성자
@@ -77,14 +77,14 @@ const BlogPostTable = ({ posts }: { posts: Array<PostProps> }) => {
                 <TableCell
                   sx={{ color: "#ada3a3" }}
                   onClick={() => {
-                    router.push(`${prefix}/post/${post.slug}`);
+                    router.push(`post/${post.slug}`);
                   }}
                 >
                   {post.slug}
                 </TableCell>
                 <BtnTableCell
                   onClick={() => {
-                    router.push(`${prefix}/post/${post.slug}`);
+                    router.push(`post/${post.slug}`);
                   }}
                 >
                   {post.title}

@@ -14,8 +14,8 @@ import { useRecoilState } from "recoil";
 import { PostProps, postsState } from "../../Components/states/dataStore";
 import BlogPostTable from "../../Components/PostComponents/BlogPostTable";
 
-const prefix =
-  process.env.NODE_ENV === "production" ? "sanity-nextjs-blog" : "";
+// const prefix =
+//   process.env.NODE_ENV === "production" ? "sanity-nextjs-blog" : "";
 
 interface Props extends ParsedUrlQuery {
   slug: string;
@@ -36,7 +36,7 @@ const IndexPage = ({ slug, post }: Props) => {
   console.log(postsData);
 
   const handleHomeClick = () => {
-    router.push(`${prefix}/`);
+    router.push(`/`);
   };
 
   return (

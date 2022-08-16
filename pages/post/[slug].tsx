@@ -13,8 +13,8 @@ import BlogPostTitle from "../../Components/PostComponents/BlogPostTitle";
 import { useRecoilState } from "recoil";
 import { PostProps, postsState } from "../../Components/states/dataStore";
 
-const prefix =
-  process.env.NODE_ENV === "production" ? "sanity-nextjs-blog" : "";
+// const prefix =
+//   process.env.NODE_ENV === "production" ? "sanity-nextjs-blog" : "";
 
 interface Props extends ParsedUrlQuery {
   slug: string;
@@ -30,7 +30,7 @@ const PostAll = ({ slug, post }: Props) => {
   const [postsData, setPostsData] = useRecoilState<PostProps[]>(postsState); // posts 배열 데이터를 담을 recoilState 선언
 
   const handleHomeClick = () => {
-    router.push(`${prefix}/`);
+    router.push(`/`);
   };
 
   return (

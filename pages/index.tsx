@@ -15,8 +15,8 @@ import { useRecoilState } from "recoil";
 import { PostProps, postsState } from "../Components/states/dataStore";
 import { useEffect } from "react";
 
-const prefix =
-  process.env.NODE_ENV === "production" ? "sanity-nextjs-blog" : "";
+// const prefix =
+//   process.env.NODE_ENV === "production" ? "sanity-nextjs-blog" : "";
 
 interface Props {
   home: any;
@@ -45,8 +45,8 @@ const Home: NextPage<Props> = ({ home, posts }: Props) => {
   // console.log(posts);
 
   const handleHomeClick = () => {
-    console.log(prefix);
-    router.push(`${prefix}/`);
+    // console.log(prefix);
+    router.push(`/`);
   };
 
   return (

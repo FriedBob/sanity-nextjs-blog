@@ -26,8 +26,8 @@ interface MainPostProps {
   content: Object[]; // 게시글에 작성된 글의 각 속성들
 }
 
-const prefix =
-  process.env.NODE_ENV === "production" ? "sanity-nextjs-blog" : "";
+// const prefix =
+//   process.env.NODE_ENV === "production" ? "sanity-nextjs-blog" : "";
 
 const BlogMainPost = ({
   title,
@@ -42,7 +42,7 @@ const BlogMainPost = ({
       {/* <Typography variant="h2" sx={{ fontWeight: "600", mb: "1rem" }}>
         Main Post
       </Typography> */}
-      <Link href={`${prefix}/post/${slug}`}>
+      <Link href={`post/${slug}`}>
         <Card sx={{ width: "80%" }}>
           <CardActionArea>
             <CardMedia

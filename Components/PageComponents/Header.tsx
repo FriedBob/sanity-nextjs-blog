@@ -11,8 +11,8 @@ import HomeIcon from "@mui/icons-material/Home";
 import * as S from "./styles";
 import { Box } from "@mui/system";
 import { useRouter } from "next/router";
-export const prefix =
-  process.env.NODE_ENV === "production" ? "sanity-nextjs-blog" : "";
+// export const prefix =
+//   process.env.NODE_ENV === "production" ? "sanity-nextjs-blog" : "";
 
 const pages = ["Post", "Author", "About"]; // 이동할 페이지 백업
 interface InputProps {
@@ -51,7 +51,7 @@ const Header = ({ handleHomeClick, posts }: InputProps) => {
 
   // 서브메뉴 버튼 클릭 시 로직
   const clickPost = () => {
-    router.push(`${prefix}/post`);
+    router.push(`post`);
     // console.log(posts);
     // router.push(
     //   { pathname: "/post", query: { posts: JSON.stringify(posts) } }
@@ -62,7 +62,7 @@ const Header = ({ handleHomeClick, posts }: InputProps) => {
     console.log("clickAuthor");
   };
   const clickAbout = () => {
-    router.push(`${prefix}/about`);
+    router.push(`about`);
     // console.log("clickAbout");
   };
 
