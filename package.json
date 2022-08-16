@@ -2,7 +2,7 @@
   "name": "sanity-nextjs-blog",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://FriedBob.github.io/sanity-nextjs-blog",
+  "homepage": "https://friedbob.github.io/sanity-nextjs-blog/",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
