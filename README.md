@@ -1,4 +1,4 @@
-# <div style="font-size:3rem; align:center"> Sanity Blog </div>
+# <div style="font-size:3rem" align = "center"> Sanity Blog </div>
 
 [Sanity](https://www.sanity.io/)에서 제공하는 DB와 인터페이스를 기반으로 작성된 게시글을 조회하는 Next.js 기반 `SSR(Server-Side-Rendering)`사이트입니다. Sanity DB는 보안상의 이유로 Repository 내에는 제공되지 않으며 Front-End 단의 코드만 공개처리되어 있습니다.
 
