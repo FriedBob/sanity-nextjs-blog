@@ -188,7 +188,7 @@ Next.js의 `getStaticProps`와 `getStaticPath`를 활용한 `SSG(Static-Site-Gen
 &nbsp;
 
 <div align="center">
-<img src="public/github/post.png" alt="blog.png" width="600px" />
+<img src="public/github/blog.png" alt="blog.png" width="600px" />
 </div>
 
 &nbsp;
