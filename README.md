@@ -12,9 +12,9 @@
 
 &nbsp;
 
-# <div style="text-align:center">📚 Stacks</div>
+# <div align="center">📚 Stacks</div>
 
-<div style="text-align:center">
+<div align="center">
 <img src="https://img.shields.io/badge/html5-E34F26?style=for-the-badge&logo=html5&logoColor=white">
 <img src="https://img.shields.io/badge/next.js-000000?style=for-the-badge&logo=next.js&logoColor=white">
 <img src="https://img.shields.io/badge/Javascript-F7DF1E?style=for-the-badge&logo=Javascript&logoColor=black">
@@ -30,7 +30,7 @@
 
 &nbsp;
 
-# <div style="text-align:center">⚽ Installation</div>
+# <div align="center">⚽ Installation</div>
 
 Note: `package.json` 에 관련 dependency가 등록되어 있습니다.
 
@@ -107,7 +107,7 @@ Next.js의 `getStaticProps`와 `getStaticPath`를 활용한 `SSG(Static-Site-Gen
 
 &nbsp;&nbsp;
 
-# <div style="text-align:center">🏫 Features</div>
+# <div align="center">🏫 Features</div>
 
 &nbsp;
 
@@ -154,33 +154,3 @@ npx json-server ./localDB.json --port 5500
 </div>
 
 &nbsp;
-
-# <div style="text-align:center">🖊️ Script</div>
-
-- 터미널 상에서 아래의 스크립트로 동작합니다.
-
-&nbsp;&nbsp;
-
-## `npm start`
-
----
-
-```
-npm start
-```
-
-브라우저를 열어 프로젝트를 실행시킵니다. <br/><br/>
-또는 명령어 입력 후 브라우저를 직접 열어 http://localhost:3000 주소에서 결과를 볼 수 있습니다.
-
-&nbsp;&nbsp;
-
-## `npm build`
-
----
-
-```
-npm build
-```
-
-프로젝트를 빌드합니다. <br/><br/>
-빌드 후 생성된 `build` 폴더는 배포 시 해당 폴더가 배포됩니다.
