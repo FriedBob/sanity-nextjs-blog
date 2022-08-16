@@ -167,6 +167,8 @@ Next.js의 `getStaticProps`와 `getStaticPath`를 활용한 `SSG(Static-Site-Gen
 
 - 포스트 작성자, 날짜, 태그, 부제, 고유ID 를 한번에 볼 수 있습니다.
 
+- `React` 의 `RecoilState` 기능을 사용하여 정상적인 루트로 페이지 접속 시 포스트 정보가 저장됩니다.
+
   &nbsp;
 
 <div align ="center">
