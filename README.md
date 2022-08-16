@@ -111,50 +111,88 @@ Next.js의 `getStaticProps`와 `getStaticPath`를 활용한 `SSG(Static-Site-Gen
 
 &nbsp;
 
-## 랜딩 페이지
+## ✔ 랜딩 페이지
 
 ---
 
 - 페이지 접속 시 보는 첫 화면입니다. <br>
 
-<div>
+<div align="center">
 <img src="public/github/landingpage.png" alt="landingpage.png" width="600px"/>
 </div>
 
-```
-npm start
-npx json-server ./localDB.json --port 5500
-```
+<br>
 
-- 프로젝트를 실행하고 , localDB의 서버를 5500 port로 실행시킨 이후 정상적으로 로그인 진행 가능
-<div style="text-align:center">
-  <img src="public/login.gif" width="600px"/>
+- 헤더의 서브메뉴를 클릭하여 다음 정보를 볼 수 있는 페이지로 연결됩니다.
+  - 게시글 목록 조회
+  - 게시글 작성자 목록 조회 (미구현)
+  - 제작자 깃허브 정보
+
+&nbsp;
+
+- 하단에는 대표 게시글과 최신 게시글 목록을 볼 수 있으며 클릭시 해당 포스트로 연결됩니다.
+
+<div align="center">
+<img src="public/github/maintravel.gif" alt="maintravel.gif" width="600px"/>
 </div>
 
 &nbsp;
 
-## 게시글
+## ✔ 포스트
 
 ---
 
-<div style="text-align:center">
-  <img src="public/comment_look.gif" width="600px"/>
-</div>
+- Sanity에서 작성한 포스트를 조회할 수 있습니다.
 
-## 게시글 리스트
+- Sanity에서 기본적으로 지원하는 기능 외 몇가지 양식이 더 지원됩니다.
+  - `ImageGallery` : 이미지 리스트
+  - `Video` : 유튜브 등의 영상링크를 가져와 사이트에서 직접 재생
+  - `OpenGraph` : 기본 Url 외에 오픈그래프 형식으로 작성가능
+  - `CodeBlock` : 코드블록
+
+<div align="center">
+<img src="public/github/post.png" alt="post.png" width="600px"/> 
+</div>
+<br>
+
+- 표시정보 : 제목, 작성일, 태그, 작성자
+
+&nbsp;
+
+## ✔ 포스트 리스트
 
 ---
 
-<div style="text-align:center">
-  <img src="public/book_add.gif" width="600px"/>
+- 블로그에 작성된 포스트 목록을 조회할 수 있는 페이지입니다.
+
+- 포스트 작성자, 날짜, 태그, 부제, 고유ID 를 한번에 볼 수 있습니다.
+
+  &nbsp;
+
+<div align ="center">
+  <img src="public/github/postlist.gif" width="600px"/>
 </div>
 
-## About 페이지
+&nbsp;
+
+- 클릭 시 해당 포스트 페이지로 이동하며 상단의 헤더에서 언제든지 `POST 버튼` 을 클릭하여 포스트 리스트로 돌아올 수 있습니다.
+
+&nbsp;
+
+## ✔ About 페이지
 
 ---
 
-<div style="text-align:center">
-  <img src="public/book_delete.gif" width="600px"/>
+&nbsp;
+
+<div align="center">
+<img src="public/github/post.png" alt="blog.png" width="600px" />
 </div>
+
+&nbsp;
+
+- 제작자의 `github` 정보 페이지입니다.
+
+- 클릭시 해당 사이트로 이동합니다.
 
 &nbsp;
